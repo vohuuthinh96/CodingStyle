@@ -2,7 +2,7 @@
 
 ### Packages
 
-Package names are similar to Java: all __lower-case__, multiple words concatenated together, without hypens or underscores:
+Package names tương tự như java: all __lower-case__, nhiều từ được nối với nhau, không có dấu gạch ngang hoặc gạch dưới:
 
 __BAD__:
 
@@ -18,17 +18,17 @@ com.raywenderlich.funkywidget
 
 ### Classes & Interfaces
 
-Written in __UpperCamelCase__. For example `RadialSlider`. 
+Viết bằng __UpperCamelCase__. Ví dụ `RadialSlider`. 
 
 ### Methods
 
-Written in __lowerCamelCase__. For example `setValue`.
+Viết vằng  __lowerCamelCase__. Ví dụ `setValue`.
 
 ### Fields
 
-Generally, written in __lowerCamelCase__. Fields should **not** be named with Hungarian notation, as Hungarian notation is [erroneously thought](http://jakewharton.com/just-say-no-to-hungarian-notation/) to be recommended by Google.
+Được viết bằng  __lowerCamelCase__
 
-Example field names:
+Ví dụ:
 
 ```kotlin
 class MyClass {
@@ -38,7 +38,7 @@ class MyClass {
 }
 ```
 
-Constant values in the companion object should be written in __uppercase__, with an underscore separating words:
+Các giá trị không đổi trong companion object được viết bằng __uppercase__, Với dấu gạch dưới để phân cách các từ:
 
 ```kotlin
 companion object {
@@ -48,13 +48,13 @@ companion object {
 
 ### Variables & Parameters
 
-Written in __lowerCamelCase__.
+Viết bằng __lowerCamelCase__.
 
-Single character values must be avoided, except for temporary looping variables.
+Các giá trị ký tự đơn phải được tránh, ngoại trừ các biến lặp tạm thời.
 
 ### Misc
 
-In code, acronyms should be treated as words. For example:
+Trong mã, các từ viết tắt nên được coi như các từ. Ví dụ:
 
 __BAD:__
 
@@ -75,7 +75,7 @@ findPostById
 
 ### Visibility Modifiers
 
-Only include visibility modifiers if you need something other than the default of public.
+Chỉ bao gồm các công cụ sửa đổi mức độ hiển thị nếu bạn cần thứ gì đó khác với mặc định là công khai.
 
 **BAD:**
 
@@ -93,11 +93,11 @@ private val myOwnPrivateProperty = "private"
 
 ### Access Level Modifiers
 
-Access level modifiers should be explicitly defined for classes, methods and member variables.
+Các công cụ sửa đổi mức truy cập phải được định nghĩa rõ ràng cho các lớp, phương thức và các biến thành viên.
 
 ### Fields & Variables
 
-Prefer single declaration per line.
+Ưu tiên khai báo một dòng.
 
 __GOOD:__
 
@@ -106,13 +106,10 @@ username: String
 twitterHandle: String
 ```
 
-### Classes
-
-Exactly one class per source file, although inner classes are encouraged where scoping appropriate.
 
 ### Data Type Objects
 
-Prefer data classes for simple data holding objects.
+Ưu tiên sử dụng data class cho các class đơn giản.
 
 __BAD:__
 
@@ -132,23 +129,20 @@ data class Person(val name: String)
 
 ### Enum Classes
 
-Enum classes without methods may be formatted without line-breaks, as follows:
+Các lớp enum không có phương thức có thể được định dạng mà không có dấu ngắt dòng, như sau:
 
 ```kotlin
 private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 ```
 
-## Spacing
-
-Spacing is especially important in raywenderlich.com code, as code needs to be easily readable as part of the tutorial. 
 
 ### Indentation
 
-Indentation is using spaces - never tabs.
+Thụt lề đang sử dụng dấu cách - không bao giờ sử dụng tab.
 
 #### Blocks
 
-Indentation for blocks uses 2 spaces (not the default 4):
+Thụt lề cho các khối sử dụng 2 khoảng trắng (không phải 4 mặc định):
 
 __BAD:__
 
