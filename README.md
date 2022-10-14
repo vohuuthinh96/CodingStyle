@@ -162,7 +162,7 @@ for (i in 0..9) {
 
 #### Line Wraps
 
-Indentation for line wraps should use 4 spaces (not the default 8):
+Sử dụng 4 khoảng trắng (thay vì 8 như mặc định)
 
 __BAD:__
 
@@ -180,23 +180,23 @@ val widget: CoolUiWidget =
 
 ### Line Length
 
-Lines should be no longer than 100 characters long.
+Các dòng không được vượt quá 100 ký tự.
 
 
 ### Vertical Spacing
+Phải có chính xác một dòng trống giữa các phương thức để hỗ trợ việc tổ chức và rõ ràng về hình ảnh. Khoảng trắng bên trong các phương thức sẽ phân tách chức năng, nhưng có quá nhiều phần trong một phương thức thường có nghĩa là bạn nên cấu trúc lại thành một số phương thức khác.
 
-There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
 
 ## Comments
 
-When they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date or deleted.
+Khi cần, hãy sử dụng **why** một đoạn mã cụ thể lại làm được điều gì đó. Nhận xét phải được cập nhật hoặc xóa.
 
-Avoid block comments inline with code, as the code should be as self-documenting as possible. *Exception: This does not apply to those comments used to generate documentation.*
+Tránh comment cùng dòng với code. * Ngoại lệ: Điều này không áp dụng cho những nhận xét được sử dụng để tạo tài liệu
 
 
 ## Semicolons
 
-Semicolons ~~are dead to us~~ should be avoided wherever possible in Kotlin. 
+Dấu chấm phẩy ~~are dead to us~~ nên tránh sử dụng nó trong Kotlin. 
 
 __BAD__:
 
@@ -218,13 +218,14 @@ if (horseGiftedByTrojans) {
 
 ## Getters & Setters
 
-Unlike Java, direct access to fields in Kotlin is preferred. 
+Không giống Java, truyền truy cập vào các biến của Kotlin được ưu tiên . 
 
-If custom getters and setters are required, they should be declared [following Kotlin conventions](https://kotlinlang.org/docs/reference/properties.html) rather than as separate methods.
+Nếu các getters và setters tùy chỉnh là bắt buộc, chúng nên được khai báo [theo quy ước Kotlin] (https://kotlinlang.org/docs/reference/properties.html) chứ không phải là các phương thức riêng biệt.
 
 ## Brace Style
 
-Only trailing closing-braces are awarded their own line. All others appear the same line as preceding code:
+Chỉ có các dấu ngoặc nhọn cuối cùng mới sử dụng đòng riêng, còn lại viết cùng 1 dòng
+
 
 __BAD:__
 
@@ -259,7 +260,7 @@ class MyClass {
 }
 ```
 
-Conditional statements are always required to be enclosed with braces, irrespective of the number of lines required.
+Câu lệnh điều kiện luôn bắt buộc phải được đặt trong dấu ngoặc nhọn, bất kể số dòng được yêu cầu.
 
 __BAD:__
 
@@ -280,7 +281,7 @@ if (someTest) { doSomethingElse() }
 
 ## When Statements
 
-Unlike `switch` statements in Java, `when` statements do not fall through. Separate cases using commas if they should be handled the same way. Always include the else case.
+Không giống như các câu lệnh `switch` trong Java, câu lệnh` when` không nằm trong số đó. Phân tách các trường hợp bằng cách sử dụng dấu phẩy nếu chúng phải được xử lý theo cùng một cách. Luôn bao gồm trường hợp khác(else)
 
 __BAD:__
 
@@ -303,53 +304,10 @@ when (anInput) {
 ```
 
 
-## Types 
-
-Always use Kotlin's native types when available. Kotlin is JVM-compatible so **[TODO: more info]**
-
-### Type Inference
-
-Type inference should be preferred where possible to explicitly declared types. 
-
-__BAD:__
-
-```kotlin
-val something: MyType = MyType()
-val meaningOfLife: Int = 42
-```
-
-__GOOD:__
-
-```kotlin
-val something = MyType()
-val meaningOfLife = 42
-```
 
 ### Constants vs. Variables 
 
-Constants are defined using the `val` keyword, and variables with the `var` keyword. Always use `val` instead of `var` if the value of the variable will not change.
-
-*Tip*: A good technique is to define everything using `val` and only change it to `var` if the compiler complains!
-
-### Companion Objects
-
-** TODO: A bunch of stuff about companion objects **
-
-### Nullable Types
-
-Declare variables and function return types as nullable with `?` where a `null` value is acceptable.
-
-Use implicitly unwrapped types declared with `!!` only for instance variables that you know will be initialized before use, such as subviews that will be set up in `onCreate` for an Activity or `onCreateView` for a Fragment.
-
-When naming nullable variables and parameters, avoid naming them like `nullableString` or `maybeView` since their nullability is already in the type declaration.
-
-When accessing a nullable value, use the safe call operator if the value is only accessed once or if there are many nullables in the chain:
-
-```kotlin
-editText?.setText("foo")
-```
-
-
+Các hằng được xác định bằng từ khóa `val` và các biến bằng từ khóa` var`. Luôn sử dụng `val` thay vì` var` nếu giá trị của biến không thay đổi.
 
 ## XML Guidance
 
@@ -358,7 +316,7 @@ Since Android uses XML extensively in addition to Kotlin and Java, we have some 
 
 ## Language
 
-Use `en-US` English spelling. 🇺🇸
+Sử dụng tiếng anh `en-US`  🇺🇸
 
 __BAD:__
 
