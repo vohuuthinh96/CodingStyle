@@ -309,9 +309,7 @@ when (anInput) {
 
 Các hằng được xác định bằng từ khóa `val` và các biến bằng từ khóa` var`. Luôn sử dụng `val` thay vì` var` nếu giá trị của biến không thay đổi.
 
-## XML Guidance
 
-Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in our [Java code standards](https://github.com/raywenderlich/java-style-guide#xml-guidance)
 
 
 ## Language
@@ -329,4 +327,88 @@ __GOOD:__
 ```kotlin
 val colorName = "red"
 ```
+## XML style rules
+
+### 3.1 Sử dụng thẻ tự đóng
+Khi một phần tử XML không có nội dung, bạn cần phải tự đóng thẻ
+
+Nên: 
+
+```xml
+
+<TextView
+    android:id="@+id/tvProfile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+   
+```
+
+Không nên 
+
+```xml
+
+<TextView
+    android:id="@+id/tvProfile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+</TextView>
+   
+```
+
+### 3.2 Đặt  Id
+
+Id đặt tên theo kiểu __lowerCamelCase__
+
+#### 3.2.1 Đặt tên ID
+
+Các ID nên bắt đầu bằng tên phần tử. Ví dụ:
+
+| Element              | Prefix              |
+| -----------------    | -----------------   |
+| `TextView`           | `tv`                |
+| `ImageView`          | `img`               | 
+| `Button`             | `btn`               |   
+| `Menu`               | `menu`              |
+| `RelativeLayout`     | `rl`                |
+| `LinearLayout `      | `ln`                |
+
+
+Ví dụ ImageView:
+
+```xml
+
+<ImageView
+    android:id="@+id/imgAvatar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+    
+
+```
+#### 3.2.2 Strings
+
+Tên chuối bắt đầu bằng một định danh. Ví dụ `registration_email_hint` hoặc `registration_name_hint`. 
+Hoặc nếu không thì theo quy luật sau:
+
+| Tiền tố             | Mô tả                           |
+| -----------------  | --------------------------------------|
+| `error_`             | Cho thông báo lỗi                   |
+| `msg_`               | Cho một thông báo or in nhắn         |       
+| `title_`             | Cho tiêu đề, vd tiêu đề dialog, activity         | 
+| `action_`            | Hành vi như `Lưu`, `Sửa` , `Xóa`  |
+
+#### 3.2.3 Styles and Themes
+
+Khai báo theo kiểu __UpperCamelCase__.
+
+#### 3.2.4 Thứ tự thuộc tính
+
+Như một quy luật chung thì bạn nên nhóm các thuộc tính giống nhau lại.
+
+1. View Id
+2. Style
+3. Layout width and layout height
+4. Other layout attributes, sorted alphabetically
+5. Remaining attributes, sorted alphabetically
+
+
 
